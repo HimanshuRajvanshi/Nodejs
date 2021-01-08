@@ -59,6 +59,8 @@ router.post(
 
             await user.save();
 
+
+            
             const message = {
                 from: 'himanshu.nikhil.gupta@gmail.com', 
                 to:user.email,
