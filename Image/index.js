@@ -57,7 +57,7 @@ app.post('/upload-profile-pic', (req, res) => {
 
         // Display uploaded image for user validation
         res.send(`You have uploaded this image: <hr/><img src="${req.file.path}" width="500"><hr /><a href="./">Upload another image</a>`);
-    });
+    }); 
 });
 
 const imageFilter = function(req, file, cb) {
