@@ -7,6 +7,8 @@ const router = express.Router();
 const User = require("../model/User");
 const auth = require("../middleware/auth");
 const nodemailer = require('nodemailer');
+
+
 let transport = nodemailer.createTransport({
     host: 'smtp.mailtrap.io',
     port: 2525,
@@ -59,8 +61,7 @@ router.post(
 
             await user.save();
 
-
-            
+            //for send email
             const message = {
                 from: 'himanshu.nikhil.gupta@gmail.com', 
                 to:user.email,
@@ -154,9 +155,6 @@ router.post(
 
 router.get("/user_lits", auth, async (req, res) => {
     // console.log("user List Connect");
-
-
-
     
     try {
       const users = await User.find();
